@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub05 : true,
+            cate05 : '05'
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title.html', {
+                cate05 : '05',
+                prev : '이벤트관리',
+                exTitle : true,
+                title : '이벤트 공지',
+            })
+
+            <ul class="nav nav-tabs sub-page-tab">
+                <li class="nav-item"><a href="sub_05_05_01.html" class="nav-link active" aria-current="page">이벤트 공지</a></li>
+                <li class="nav-item"><a href="sub_05_05_02.html" class="nav-link">당첨자 관리</a></li>
+            </ul>
+
+            <!-- page contents -->
+            <div class="page-section">                
+                <section class="sect">
+                    @@include('./modules/search.html', {
+                        page : 'sub_05_05_01_write',
+                        del : true
+                    })
+
+                    @@include('./modules/list-table.html', {
+                        chktype : true,
+                        sub050501 : true
+                    })
+
+                    @@include('./modules/pagination.html')
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+</body>
+</html>

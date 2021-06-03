@@ -1,0 +1,1000 @@
+<!-- table -->
+@@if(context.title){
+<h3 class="h3-title"><i class="bi bi-pin-angle me-1"></i>@@title</h3>
+}
+@@if(context.titleMix){
+<div class="d-flex align-items-end mb-2">
+    <h3 class="h3-title me-auto mb-0"><i class="bi bi-pin-angle me-1"></i>@@titleMix</h3>
+    @@if(context.mixtype1){
+        <button type="button" class="btn btn-sm btn-danger">매칭 취소</button>
+        <button type="button" class="btn btn-sm btn-success ms-1" data-toggle="modal" data-target="#modify-modal">매칭 변경</button>
+    }
+    @@if(context.mixtype2){
+        <button type="button" class="btn btn-sm btn-secondary">취소</button>
+        <button type="button" class="btn btn-sm btn-dark ms-1">발송하기</button>
+    }
+    @@if(context.mixtype3){
+        <button type="button" class="btn btn-sm btn-danger">삭제</button>
+    }
+    @@if(context.mixtype4){
+        <button type="button" class="btn btn-sm btn-secondary">취소</button>
+        <button type="button" class="btn btn-sm btn-dark ms-1">저장</button>
+    }
+</div>
+}
+<table class="table row-table">
+    <colgroup>
+        <col style="width:15%">
+        <col>
+        @@if(context.col4){
+        <col style="width:15%">
+        <col>
+        }
+    </colgroup>
+    @@if(context.sub01){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '라운드 날짜',
+                    datepic : true
+                }, {
+                    time : true
+                }, {
+                    pp : true
+                }, {
+                    state : true
+                }, {
+                    team : true
+                }, {
+                    age : true
+                }, {
+                    hand : true
+                }, {
+                    fee : true
+                }, {
+                    style : true
+                }, {
+                    spot : true
+                }, {
+                    place : true
+                }, {
+                    th : '남기고 싶은 말씀',
+                    textarea : true
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub02){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '아이디',
+                    text : 'golf202111'
+                },
+                {
+                    th : '회원명',
+                    text : '신골프',
+                    used : true
+                },
+                {
+                    th : '핸드폰번호',
+                    text : '000-0000-0000'
+                },
+                {
+                    th : '라운드 날짜',
+                    text : '2021-07-03'
+                },
+                {
+                    th : '라운드 시간',
+                    text : '새벽(5시~7시)'
+                },
+                {
+                    th : '라운드 인원',
+                    text : '1명'
+                },
+                {
+                    th : '라운드 지역',
+                    text : '제주시 동부'
+                },
+                {
+                    th : '라운드 골프장',
+                    text : '그린필드'
+                },
+                {
+                    th : '매칭일',
+                    text : '2021-06-30'
+                },
+                {
+                    th : '메시지',
+                    text : '부부골퍼로서 1개월에 1번정도 라운딩합니다.<br>티홀에서 10회 이용'
+                },
+            ])
+        </tbody>
+    }
+    @@if(context.sub02modify){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '아이디',
+                    text : 'golf202111'
+                },
+                {
+                    th : '회원명',
+                    text : '신골프',
+                    used : true
+                },
+                {
+                    th : '핸드폰번호',
+                    text : '000-0000-0000'
+                },
+                {
+                    th : '라운드 날짜',
+                    datepic : true,
+                },
+                {
+                    time : true,
+                },
+                {
+                    pp : true,
+                },
+                {
+                    spot : true
+                },
+                {
+                    place : true
+                },
+                {
+                    th : '매칭일',
+                    text : '2021-06-30'
+                },
+                {
+                    th : '메시지',
+                    textarea : {
+                        cont : '부부골퍼로서 1개월에 1번정도 라운딩합니다. 티홀에서 10회 이용'
+                    }
+                },
+            ])
+        </tbody>
+    }
+    @@if(context.sub02fee){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : 'Fee',
+                    text : '200,000원'
+                },
+                {
+                    th : '그린피',
+                    text : '100,000원'
+                },
+                {
+                    th : '카트비',
+                    text : '100,000원'
+                },
+                {
+                    th : '기타',
+                    text : '100,000원(숙박비)'
+                },
+                {
+                    th : '합계',
+                    text : '<p class="fw-bold">500,000원</p>'
+                },
+            ])
+        </tbody>
+    }
+    @@if(context.sub02feemodify){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : 'Fee',
+                    inputPrice : '200,000'
+                },
+                {
+                    th : '그린피',
+                    inputPrice : '100,000'
+                },
+                {
+                    th : '카트비',
+                    inputPrice : '100,000'
+                },
+                {
+                    th : '기타',
+                    inputPrice : '100,000',
+                    inputMore : '숙박비'
+                },
+                {
+                    th : '합계',
+                    text : '<p class="fw-bold">500,000원</p>'
+                },
+            ])
+        </tbody>
+    }
+    @@if(context.sub02tab1){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '제목',
+                    input : true
+                },
+                {
+                    th : '작성자',
+                    text : '박팀장'
+                },
+                {
+                    th : '등록일',
+                    text : '2021-07-01'
+                },
+                {
+                    th : '팀매칭 인원',
+                    radio : {
+                        name : 'personnel',
+                        list : [
+                            '1명', '2명', '3명', '커플'
+                        ]
+                    }
+                },
+                {
+                    th : '내용',
+                    textarea : true
+                },
+                {
+                    th : '상태',
+                    radio : {
+                        name : 'state',
+                        list : [
+                            '접수', '부재', '거절', '대기', '매칭'
+                        ]
+                    }
+                },
+                {
+                    file : true
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub02tab11){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '제목',
+                    text : '7월 21일 제주 그린필드 10시 1팀 매칭'
+                },
+                {
+                    th : '작성자',
+                    text : '박팀장'
+                },
+                {
+                    th : '등록일',
+                    text : '2021-07-01'
+                },
+                {
+                    th : '팀매칭 인원',
+                    text : '커플'
+                },
+                {
+                    th : '내용',
+                    text : '7월 21일 제주 그린필드 10시 1팀 매칭, 부부커플로 상대커플도 부부임'
+                },
+                {
+                    th : '상태',
+                    text : '접수'
+                },
+                {
+                    th : '첨부파일',
+                    text : '첨부파일.jpg'
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub02tab2){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '작성자',
+                    text : '김실장'
+                },
+                {
+                    th : '발송일',
+                    text : '2021-06-22'
+                },
+                {
+                    th : '내용',
+                    textarea : true
+                },
+            ])
+        </tbody>
+    }
+    @@if(context.sub02tab22){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '작성자',
+                    text : '김실장'
+                },
+                {
+                    th : '발송일',
+                    text : '2021-06-22'
+                },
+                {
+                    th : '내용',
+                    text : '안녕하세요?<br>티홀 김실장입니다.'
+                },
+            ])
+        </tbody>
+    }
+    @@if(context.sub0301){
+        <tbody>
+            <tr>
+                <th scope="row">회원가입일</th>
+                <td>2021-06-10</td>
+                <th scope="row">회원상태</th>
+                <td>정상회원</td>
+            </tr>
+            <tr>
+                <th scope="row">성명</th>
+                <td>홍길동(hong1234)</td>
+                <th scope="row">닉네임</th>
+                <td>탁월한골퍼</td>
+            </tr>
+            <tr>
+                <th scope="row">패스워드</th>
+                <td>********</td>
+                <th scope="row">패스워드 확인</th>
+                <td>********</td>
+            </tr>
+            <tr>
+                <th scope="row">휴대폰번호</th>
+                <td>
+                    <input type="text" class="form-control w-50" value="010-0000-0000" aria-label="입력된 휴대폰번호">
+                </td>
+                <th scope="row">이메일</th>
+                <td>
+                    <input type="text" class="form-control w-50" value="hong1234@naver.com" aria-label="입력된 이메일주소">
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">출생연도</th>
+                <td>
+                    <input type="text" class="form-control w-50" value="1977" aria-label="입력된 출샐연도">
+                </td>
+                <th scope="row">성별</th>
+                <td>
+                    @@include('./modules/input-inline-list.html', {
+                        radio : true,
+                        name : 'gender',
+                        list : [
+                            '남', '여'
+                        ]
+                    })
+                </td>
+            </tr>
+        </tbody>
+    }
+    @@if(context.sub030102){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '회원 정보',
+                    radio : {
+                        name : 'member-state',
+                        list : [
+                            '정상회원',
+                            '회원정지'
+                        ]
+                    },
+                    inputAdd : '정지사유'
+                },
+                {
+                    th : '비밀번호 초기화',
+                    button : {
+                        color : 'point2',
+                        icon : '<i class="bi bi-exclamation-triangle-fill me-1"></i>',
+                        tit : '초기화'
+                    }
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub030103){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '구력',
+                    radio : {
+                        name : 'years',
+                        list : [
+                            '~6개월 이하', '1~2년', '2~3년', '3~5년', '5~10년', '10~15년',
+                            '15~20년', '20~30년', '30년 이상'
+                        ]
+                    }
+                },
+                {
+                    hand : true,
+                }, 
+                {
+                    style : true,
+                },
+                {
+                    time : {
+                        val : '선호하는 시간대'
+                    }
+                },
+                {
+                    team : {
+                        val : '선호하는 팀매칭'
+                    }
+                },
+                {
+                    th : '선호하는 골프장',
+                    radio : {
+                        name : 'course',
+                        list : [
+                            '산악형', '평지형', '상관없음'
+                        ]
+                    }
+                },
+                {
+                    th : '라운드 횟수(월간 기준)',
+                    radio : {
+                        name : 'count',
+                        list : [
+                            '1회', '2~3회', '4~5회', '5~10회', '10회 이상'
+                        ]
+                    }
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub0501){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '제목', 
+                    input : true
+                },
+                {
+                    th : '작성자',
+                    text : '관리자'
+                }, 
+                {
+                    th : '내용',
+                    textarea : true,
+                    big : true
+                }, 
+                {
+                    file : true
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub0502){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '제목', 
+                    input : true
+                },
+                {
+                    th : '작성자',
+                    text : '관리자'
+                },
+                {
+                    th : '내용',
+                    textarea : true,
+                    big : true
+                }, 
+                {
+                    file : true
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub0503){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '분야', 
+                    select : {
+                        option : '회원관련'
+                    }
+                },
+                {
+                    th : '작성자',
+                    text : '관리자'
+                },
+                {
+                    th : '작성일',
+                    text : '2021-06-10'
+                },
+                {
+                    th : '질문',
+                    input : true
+                },
+                {
+                    th : '답변',
+                    textarea : true,
+                    big : true
+                }, 
+                {
+                    file : true
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub0504){
+        <tbody>
+            <tr>
+                <th scope="row">답변자</th>
+                <td>관리자</td>
+                <th scope="row">답변일</th>
+                <td>2021-06-06</td>
+            </tr>
+            <tr>
+                <th scope="row">답변</th>
+                <td colspan="3">
+                    <textarea class="form-control big" aria-label="답변 입력"></textarea>
+                </td>
+            </tr>
+        </tbody>
+    }
+    @@if(context.sub050501){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '이벤트 제목',
+                    input : true
+                },
+                {
+                    th : '이벤트 제목',
+                    text : '이벤트 제목이 들어감'
+                },
+                {
+                    th : '작성자',
+                    text : '관리자'
+                }, 
+                {
+                    th : '작성일',
+                    text : '2021-06-01'
+                },
+                {
+                    file : {
+                        title : '탑 이미지',
+                        chk : true,
+                        id : 'imgUp01',
+                        multi : true,
+                        alert : '※ 권장 이미지 사이즈: 720px X * / 이미지 형식 : jpg, png, gif'
+                    }
+                },
+                {
+                    file : {
+                        title : '목록 이미지',
+                        chk : true,
+                        id : 'imgUp02',
+                        alert : '※ 권장 이미지 사이즈: 720px X 350px / 이미지 형식 : jpg, png, gif'
+                    }
+                },
+                {
+                    th : '이벤트 기간',
+                    period : true
+                }, 
+                {
+                    th : '이벤트 기간',
+                    text : '2021-07-01 09:00 ~ 2021-07-21 09:00'
+                },
+                {
+                    th : '이벤트 발표일',
+                    period : {
+                        startOnly : true
+                    }
+                }, 
+                {
+                    th : '이벤트 발표일',
+                    text : '2021-07-21 10:00'
+                },
+                {
+                    file : {
+                        title : 'html 첨부'
+                    }
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub0506){
+        <tbody data-evt="tg-toggle-wrap">
+            <tr>
+                <th scope="row">구분</th>
+                <td>
+                    <div class="btn-group" role="group" aria-label="게시글 타입 선택">
+                        <input type="radio" class="btn-check" id="type1" name="type" checked>
+                        <label for="type1" class="btn btn-outline-dark" data-toggle="tg-toggle" data-target="" aria-expanded="true">텍스트 타입</label>
+                        <input type="radio" class="btn-check" id="type2" name="type">
+                        <label for="type2" class="btn btn-outline-dark" data-toggle="tg-toggle" data-target="#tr-type1" aria-expanded="false">이미지 타입</label>
+                        <input type="radio" class="btn-check" id="type3" name="type">
+                        <label for="type3" class="btn btn-outline-dark" data-toggle="tg-toggle" data-target="#tr-type2, #tr-type3" aria-expanded="false">동영상 타입</label>
+                    </div>
+                </td>
+            </tr>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '제목',
+                    input : true
+                },
+                {
+                    th : '내용',
+                    textarea : {
+                        cont : '에디터가 들어감'
+                    }
+                },
+                {
+                    file : {
+                        alert : '* 파일크기 : 5MB 이하',
+                        multi : true,
+                    }
+                },
+            ])
+            <tr id="tr-type1" class="toggle-tg">
+                <th scope="row">썸네일 이미지</th>
+                <td>
+                    <input class="form-control" type="file">
+                    <p class="text-danger mt-1">* 이미지 사이즈 : 가로 720px 이상, 정방형(1:1)비율 권장(권장사항을 지키지 않은 이미지 업로드시 디바이스에 따라 깨져보일 수 있음)</p>
+                </td>
+            </tr>
+            <tr id="tr-type2" class="toggle-tg">
+                <th scope="row">동영상 주소</th>
+                <td>
+                    <input type="text" class="form-control" aria-label="동영상 주소 입력">
+                </td>
+            </tr>
+            <tr id="tr-type3" class="toggle-tg">
+                <th scope="row">동영상 썸네일 이미지</th>
+                <td>
+                    <input class="form-control" type="file">
+                    <p class="text-danger mt-1">* 이미지 사이즈 : 가로 720px 이상, 19:6비율 권장(권장사항을 지키지 않은 이미지 업로드시 디바이스에 따라 깨져보일 수 있음)</p>
+                </td>
+            </tr>
+        </tbody>
+    }
+    @@if(context.sub0507){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '제목 <span class=text-danger>*</span>',
+                    input : true
+                },
+                {
+                    th : '게시기간 <span class=text-danger>*</span>',
+                    period2 : true
+                },
+                {
+                    size : {
+                        title : '사이즈 <span class=text-danger>*</span>',
+                        type1 : '가로',
+                        type2 : '세로'
+                    }
+                },
+                {
+                    size : {
+                        title : '위치 <span class=text-danger>*</span>',
+                        type1 : 'Top',
+                        type2 : 'Left'
+                    }
+                },
+                {
+                    th : '링크 URL',
+                    input : true
+                },
+                {
+                    th : '링크 TITLE',
+                    input : true
+                },
+                {
+                    th : '링크 타겟',
+                    select : {
+                        option : '타겟 선택'
+                    }
+                }, 
+                {
+                    file : {
+                        title : '이미지 파일',
+                        multi : true,
+                        alert : '※ 권장 이미지 사이즈: 720px X * / 이미지 형식 : jpg, png, gif'
+                    }
+                },
+                {
+                    th : '이미지 설명(alt)',
+                    input : true
+                },
+                {
+                    th : '사용여부',
+                    radio : {
+                        name : 'use',
+                        list : [
+                            '사용', '미사용'
+                        ]
+                    }
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub0508){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '제목',
+                    input : true
+                },
+            ])
+            <tr>
+                <th scope="row">노출</th>
+                <td>
+                    <div class="form-check form-switch form-check-inline" data-toggle="collapse" data-target="#period-tr" aria-expanded="true" aria-controls="period-tr">
+                        <input class="form-check-input" type="checkbox" id="use">
+                        <label class="form-check-label" for="use">즉시 노출</label>
+                    </div>
+                </td>
+            </tr>
+            <tr id="period-tr" class="collapse show">
+                <th scope="row">게시기간</th>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <div class="datepicker">
+                            <input type="text" class="form-control" value="2021-05-13">
+                            <i class="bi bi-calendar2-check"></i>
+                        </div>
+                        <span class="bar">~</span>
+                        <div class="datepicker">
+                            <input type="text" class="form-control">
+                            <i class="bi bi-calendar2-check"></i>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="기간 선택">
+                            <input type="radio" class="btn-check" id="period01" name="period-select"><label for="period01" class="btn btn-outline-secondary">오늘</label>
+                            <input type="radio" class="btn-check" id="period02" name="period-select"><label for="period02" class="btn btn-outline-secondary">어제</label>
+                            <input type="radio" class="btn-check" id="period03" name="period-select"><label for="period03" class="btn btn-outline-secondary">3일</label>
+                            <input type="radio" class="btn-check" id="period04" name="period-select"><label for="period04" class="btn btn-outline-secondary">7일</label>
+                            <input type="radio" class="btn-check" id="period05" name="period-select"><label for="period05" class="btn btn-outline-secondary">15일</label>
+                            <input type="radio" class="btn-check" id="period06" name="period-select"><label for="period06" class="btn btn-outline-secondary">1개월</label>
+                            <input type="radio" class="btn-check" id="period07" name="period-select"><label for="period07" class="btn btn-outline-secondary">3개월</label>
+                            <input type="radio" class="btn-check" id="period08" name="period-select"><label for="period08" class="btn btn-outline-secondary">6개월</label>
+                            <input type="radio" class="btn-check" id="period09" name="period-select"><label for="period09" class="btn btn-outline-secondary">전체</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '링크 URL',
+                    input : true
+                },
+                {
+                    th : '링크 TITLE',
+                    input : true
+                },
+                {
+                    th : '링크 타겟',
+                    select : {
+                        option : '타겟 선택'
+                    }
+                }, 
+                {
+                    file : {
+                        title : '이미지 파일',
+                        multi : true,
+                        alert : '※ 권장 이미지 사이즈: 720px X * / 이미지 형식 : jpg, png, gif'
+                    }
+                },
+                {
+                    th : '이미지 설명(alt)',
+                    input : true
+                },
+                {
+                    th : '사용여부',
+                    radio : {
+                        name : 'use',
+                        list : [
+                            '사용', '미사용'
+                        ]
+                    }
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub0601){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '성명',
+                    input : true
+                },
+                {
+                    th : '아이디',
+                    input : true
+                },
+                {
+                    th : '비밀번호',
+                    password : true
+                },
+                {
+                    th : '비밀번호 확인',
+                    password : true
+                },
+                {
+                    th : '이메일',
+                    input : true
+                },
+                {
+                    th : '휴대폰번호',
+                    input : true
+                }
+            ])
+            <tr>
+                <th scope="row">권한설정</th>
+                <td>
+                    <ul class="list-group">
+                        <li class="list-group-item py-3" data-toggle="allChk">
+                            @@include('./modules/input-inline-list.html', {
+                                checkbox : true,
+                                name : 'set01',
+                                allBlock : {
+                                    label : '01. 팀매칭관리'
+                                },
+                                list : [
+                                    '팀매칭 접수현황'
+                                ]
+                            })
+                        </li>
+                        <li class="list-group-item py-3" data-toggle="allChk">
+                            @@include('./modules/input-inline-list.html', {
+                                checkbox : true,
+                                name : 'set02',
+                                allBlock : {
+                                    label : '02. 팀매칭 완료관리'
+                                },
+                                list : [
+                                    '팀매칭 요청내역', '팀매칭 완료내역'
+                                ]
+                            })
+                        </li>
+                        <li class="list-group-item py-3" data-toggle="allChk">
+                            @@include('./modules/input-inline-list.html', {
+                                checkbox : true,
+                                name : 'set03',
+                                allBlock : {
+                                    label : '03. 회원관리'
+                                },
+                                list : [
+                                    '회원목록', '메시지관리'
+                                ]
+                            })
+                        </li>
+                        <li class="list-group-item py-3" data-toggle="allChk">
+                            @@include('./modules/input-inline-list.html', {
+                                checkbox : true,
+                                name : 'set04',
+                                allBlock : {
+                                    label : '04. 현황/통계'
+                                },
+                                list : [
+                                    '회원통계', '팀매칭 등록 통계', '팀매칭 접수 통계', '접속 통계', '메시지 통계'
+                                ]
+                            })
+                        </li>
+                        <li class="list-group-item py-3" data-toggle="allChk">
+                            @@include('./modules/input-inline-list.html', {
+                                checkbox : true,
+                                name : 'set05',
+                                allBlock : {
+                                    label : '05. 사이트관리'
+                                },
+                                list : [
+                                    '공지사항관리', '뉴스/언론관리', '자주찾는질문관리', '1:1문의관리',
+                                    '이벤트관리', '홍보자료관리', '팝업관리', '배너관리'
+                                ]
+                            })
+                        </li>
+                        <li class="list-group-item py-3" data-toggle="allChk">
+                            @@include('./modules/input-inline-list.html', {
+                                checkbox : true,
+                                name : 'set06',
+                                allBlock : {
+                                    label : '06. 시스템관리'
+                                },
+                                list : [
+                                    '내부사용자', '비밀번호 변경', '각종 메시지 설정'
+                                ]
+                            })
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    }
+    @@if(context.sub060102){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '상태',
+                    radio : {
+                        name : 'state',
+                        list : [
+                            '정상', '정지'
+                        ]
+                    },
+                    inputAdd : '정지사유'
+                },
+                {
+                    th : '비밀번호 초기화',
+                    button : {
+                        color : 'point2',
+                        icon : '<i class="bi bi-exclamation-triangle-fill me-1"></i>',
+                        tit : '초기화'
+                    }
+                }
+            ])
+        </tbody>
+    }
+    @@if(context.sub0602){
+        <tbody>
+            @@loop('./modules/table-input.html', [
+                {
+                    th : '성명',
+                    text : '김티홀'
+                }, 
+                {
+                    th : '아이디',
+                    text : 'abcde'
+                },
+                {
+                    th : '새비밀번호',
+                    password : {
+                        placeholder : '띄어쓰기 없는 영문 대소문자, 숫자 포함 6~15자'
+                    }
+                },
+                {
+                    th : '새비밀번호 확인',
+                    password : {
+                        placeholder : '비밀번호 동일하게 재입력'
+                    }
+                }
+            ])
+        </tbody>
+    }
+</table>
+<!-- // table -->
+@@if(context.button){
+<!-- submit button -->
+<div class="btn-wrap d-flex justify-content-center mt-4">
+    @@if(context.btntype === 'save'){
+    <a href="@@prev.html" class="btn btn-gray">취소</a>
+    <button type="submit" class="btn btn-dark ms-2">저장</button>
+    }
+    @@if(context.btntype === 'save2'){
+    <button type="button" class="btn btn-gray">취소</button>
+    <button type="submit" class="btn btn-dark ms-2">저장</button>
+    }
+    @@if(context.btntype === 'save3'){
+    <a href="@@prev.html" class="btn btn-gray">목록</a>
+    <button type="submit" class="btn btn-dark ms-2">저장</button>
+    }
+    @@if(context.btntype === 'reset'){
+    <input type="reset" class="btn btn-gray" value="취소">
+    <button type="submit" class="btn btn-primary">저장</button>
+    }
+    @@if(context.btntype === 'modify'){
+    <a href="@@prev.html" class="btn btn-gray">목록</a>
+    <button type="submit" class="btn btn-dark ms-2">수정</button>
+    }
+    @@if(context.btntype === 'modify2'){
+    <a href="@@prev.html" class="btn btn-gray">목록</a>
+    <a href="@@link.html" class="btn btn-dark ms-2">수정</a>
+    }
+    @@if(context.btntype === 'list'){
+    <a href="@@prev.html" class="btn btn-gray">목록</a>
+    }
+    @@if(context.btntype === 'triple'){
+    <a href="@@prev.html" class="btn btn-gray me-auto">목록</a>
+    <button type="button" class="btn btn-secondary">수정</button>
+    <button type="button" class="btn btn-danger ms-1">삭제</button>
+    }
+</div>
+<!-- // submit button -->
+}

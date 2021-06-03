@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub02 : true,
+            cate02 : '02'
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title-sub.html', {
+                cate02 : '02',
+                title : '팀매칭 완료내역 보기',
+                prev : '팀매칭 완료내역'
+            })
+
+            <!-- page contents -->
+            <div class="page-section">
+                <section class="sect">
+                    @@include('./modules/request-cont.html', {
+                        btn : true
+                    })
+                </section>
+
+                <section class="sect">
+                    @@include('./modules/write-table.html', {
+                        titleMix : '매칭회원',
+                        mixtype1 : true,
+                        sub02 : true,
+                    })
+                </section>
+                
+                <section class="sect">
+                    @@include('./modules/write-table.html', {
+                        title : '이용금액',
+                        sub02fee : true,
+                        button : true,
+                        btntype : 'list',
+                        prev : 'sub_02_02'
+                    })
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+</body>
+</html>

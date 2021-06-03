@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub06 : true,
+            cate06 : '01'
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title.html', {
+                cate06 : '01',
+                prev : '내부사용자',
+                title : '내부사용자 등록/수정'
+            })
+
+            <!-- page contents -->
+            <div class="page-section">                
+                <section class="sect">
+                    @@include('./modules/write-table.html', {
+                        title : '기본 정보',
+                        sub0601 : true
+                    })
+                </section>
+                <section class="sect">
+                    @@include('./modules/write-table.html', {
+                        title : '상태 정보',
+                        sub060102 : true,
+                        button : true,
+                        btntype : 'triple',
+                        prev : 'sub_06_01'
+                    })
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub06 : true,
+            cate06 : '02'
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title.html', {
+                cate06 : '02',
+                title : '비밀번호변경'
+            })
+
+            <!-- page contents -->
+            <div class="page-section">
+                <section class="sect">
+                    @@include('./modules/write-table.html', {
+                        sub0602 : true,
+                        button : true,
+                        btntype : 'save2',
+                    })
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+</body>
+</html>

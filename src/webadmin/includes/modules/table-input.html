@@ -1,0 +1,304 @@
+@@if(context.th){
+<tr>
+    <th scope="row">@@th</th>
+    <td>
+        @@if(context.datepic){
+            <div class="datepicker w-25">
+                <input type="text" class="form-control" value="" aria-label="날짜 선택">
+                <i class="bi bi-calendar2-check"></i>
+            </div>
+        }
+        @@if(context.period){
+            <div class="d-flex align-items-center">
+                <div class="datepicker w-auto">
+                    <input type="text" class="form-control" value="" aria-label="시작 날짜 선택">
+                    <i class="bi bi-calendar2-check"></i>
+                </div>
+                <select class="form-select w-auto" aria-label="시작 날짜의 시간 선택">
+                    <option value="">07:00</option>
+                    <option value="">08:00</option>
+                </select>
+                @@if(!context.period.startOnly){
+                <span>~</span>
+                <div class="datepicker w-auto">
+                    <input type="text" class="form-control" value="" aria-label="종료 날짜 선택">
+                    <i class="bi bi-calendar2-check"></i>
+                </div>
+                <select class="form-select w-auto" aria-label="종료 날짜의 시간 선택">
+                    <option value="">07:00</option>
+                    <option value="">08:00</option>
+                </select>
+                }
+            </div>
+        }
+        @@if(context.period2){
+            <div class="d-flex align-items-center">
+                <div class="datepicker">
+                    <input type="text" class="form-control" value="2021-05-13">
+                    <i class="bi bi-calendar2-check"></i>
+                </div>
+                <span class="bar">~</span>
+                <div class="datepicker">
+                    <input type="text" class="form-control">
+                    <i class="bi bi-calendar2-check"></i>
+                </div>
+                <div class="btn-group" role="group" aria-label="기간 선택">
+                    <input type="radio" class="btn-check" id="period01" name="period-select"><label for="period01" class="btn btn-outline-secondary">오늘</label>
+                    <input type="radio" class="btn-check" id="period02" name="period-select"><label for="period02" class="btn btn-outline-secondary">어제</label>
+                    <input type="radio" class="btn-check" id="period03" name="period-select"><label for="period03" class="btn btn-outline-secondary">3일</label>
+                    <input type="radio" class="btn-check" id="period04" name="period-select"><label for="period04" class="btn btn-outline-secondary">7일</label>
+                    <input type="radio" class="btn-check" id="period05" name="period-select"><label for="period05" class="btn btn-outline-secondary">15일</label>
+                    <input type="radio" class="btn-check" id="period06" name="period-select"><label for="period06" class="btn btn-outline-secondary">1개월</label>
+                    <input type="radio" class="btn-check" id="period07" name="period-select"><label for="period07" class="btn btn-outline-secondary">3개월</label>
+                    <input type="radio" class="btn-check" id="period08" name="period-select"><label for="period08" class="btn btn-outline-secondary">6개월</label>
+                    <input type="radio" class="btn-check" id="period09" name="period-select"><label for="period09" class="btn btn-outline-secondary">전체</label>
+                </div>
+            </div>
+        }
+        @@if(context.radio){
+            @@for(var i=0; i < radio.list.length; i++) {
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="@@radio.name`+[i+1]+`" name="@@radio.name">
+                    <label for="@@radio.name`+[i+1]+`" class="form-check-label">`+radio.list[i]+`</label>
+                </div>
+            }
+            @@if(context.inputAdd){
+                <div class="input-group d-inline-flex w-50">
+                    <span class="input-group-text">@@inputAdd</span>
+                    <input type="text" class="form-control" aria-label="@@inputAdd 입력" placeholder="@@inputAdd 입력">
+                </div>
+            }
+        }
+        @@if(context.switch){
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="@@switch.id">
+                <label class="form-check-label" for="@@switch.id">@@switch.label</label>
+            </div>
+        }
+        @@if(context.select){
+            <select class="form-select w-25" aria-label="@@th 선택">
+                <option value="">@@select.option</option>
+            </select>
+        }
+        @@if(context.textarea){
+            <textarea class="form-control@@if(context.big){ big}" aria-label="@@th 입력">@@if(context.textarea.cont){@@textarea.cont}</textarea>
+        }
+        @@if(context.text){
+            @@text
+        }
+        @@if(context.used) {
+            <a href="" class="btn btn-sm btn-point2 ms-3"><i class="bi bi-list-check me-1"></i>이용내역</a>
+        }
+        @@if(context.button) {
+            <button type="button" class="btn btn-sm btn-@@button.color">@@if(context.button.icon){@@button.icon}@@button.tit</button>
+        }
+        @@if(context.input) {
+            <input type="text" class="form-control" aria-label="@@th 입력"@@if(context.input.placeholder){ placeholder="@@input.placeholder"}>
+        }
+        @@if(context.password) {
+            <input type="password" class="form-control" aria-label="@@th 입력"@@if(context.password.placeholder){ placeholder="@@password.placeholder"}>
+        }
+        @@if(context.inputPrice) {
+            <div class="d-flex align-items-center">
+                <input type="text" class="form-control w-25" aria-label="@@th 입력" value="@@inputPrice">
+                <p>원</p>
+                @@if(context.inputMore){
+                <input type="text" class="form-control w-25 ms-4" aria-label="기타 항목 입력" value="@@inputMore">
+                }
+            </div>
+        }
+    </td>
+</tr>
+}
+@@if(context.time){
+<tr>
+    @@if(context.time.val){
+        <th scope="row">@@time.val</th>
+    }
+    @@if(!context.time.val){
+        <th scope="row">라운드 시간</th>
+    }
+    <td>
+        @@include('./modules/input-inline-list.html', {
+            radio : true,
+            name : 'time',
+            list : [
+                '새벽(5시~7시)', '오전(8시~9시)', '오후A(11시~12시)', '오후B(13시~14시)',
+                '야간(15시이후~)', '시간무관'
+            ]
+        })
+    </td>
+</tr>
+}
+@@if(context.pp){
+<tr>
+    <th scope="row">라운드 인원</th>
+    <td>
+        @@include('./modules/input-inline-list.html', {
+            radio : true,
+            name : 'personnel',
+            list : [
+                '1인', '2인', '3인', '커플'
+            ]
+        })
+    </td>
+</tr>
+}
+@@if(context.spot){
+<tr>
+    <th scope="row">라운드 지역</th>
+    <td>
+        <select class="form-select w-25" aria-label="라운드 지역 선택">
+            <option value="">제주시</option>
+        </select>
+    </td>
+</tr>
+}
+@@if(context.place){
+<tr>
+    <th scope="row">라운드 골프장</th>
+    <td>
+        <select class="form-select w-25" aria-label="라운드 골프장 선택">
+            <option value="">그린필드</option>
+        </select>
+    </td>
+</tr>
+}
+@@if(context.state){
+<tr>
+    <th scope="row">라운드 상태</th>
+    <td>
+        @@include('./modules/input-inline-list.html', {
+            radio : true,
+            name : 'state',
+            list : [
+                '전체', '진행중', '대기중'
+            ]
+        })
+    </td>
+</tr>
+}
+@@if(context.team){
+<tr>
+    @@if(context.team.val){
+        <th scope="row">@@team.val</th>
+    }
+    @@if(!context.team.val){
+        <th scope="row">희망 유형</th>
+    }
+    <td>
+        @@include('./modules/input-inline-list.html', {
+            radio : true,
+            name : 'team',
+            list : [
+                '커플', '남성팀', '여성팀', '무관'
+            ]
+        })
+    </td>
+</tr>
+}
+@@if(context.age){
+<tr>
+    <th scope="row">희망 연령</th>
+    <td>
+        @@include('./modules/input-inline-list.html', {
+            radio : true,
+            name : 'age',
+            list : [
+                '20~30대', '30~40대', '40~50대', '50~60대', '무관'
+            ]
+        })
+    </td>
+</tr>
+}
+@@if(context.hand){
+<tr>
+    <th scope="row">핸디캡</th>
+    <td>
+        @@include('./modules/input-inline-list.html', {
+            radio : true,
+            name : 'handicap',
+            list : [
+                '싱글팀', '보기팀', '더블팀', '초보팀', '무관'
+            ]
+        })
+    </td>
+</tr>
+}
+@@if(context.fee){
+<tr>
+    <th scope="row">그린피</th>
+    <td>
+        @@include('./modules/input-inline-list.html', {
+            radio : true,
+            name : 'fee',
+            list : [
+                '9만원 이하', '10~13만원', '14~16만원', '17만원 이상', '무관'
+            ]
+        })
+    </td>
+</tr>
+}
+@@if(context.style){
+<tr>
+    <th scope="row">라운드스타일</th>
+    <td>
+        @@include('./modules/input-inline-list.html', {
+            radio : true,
+            name : 'style',
+            list : [
+                '명랑골프', '프로골프', '초보골프', '친목골프', '무관'
+            ]
+        })
+    </td>
+</tr>
+}
+@@if(context.file){
+<tr>
+    @@if(context.file.title){
+        <th scope="row">
+            @@file.title
+            @@if(context.file.chk){
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="@@file.id" name="@@file.id">
+                    <label class="form-check-label" for="@@file.id">노출</label>
+                </div>
+            }
+        </th>
+    }
+    @@if(!context.file.title){
+        <th scope="row">첨부파일</th>
+    }
+    <td>
+        @@if(!context.file.multi){
+        <input class="form-control" type="file">
+        }
+        @@if(context.file.multi){
+        <div class="multi-file-wrap" data-max-count="5">
+            <div class="d-flex align-items-center file-wrap">
+                <input class="form-control" type="file" id="file-upload0" name="file-upload">
+                <button type="button" class="btn btn-dark" data-toggle="row-add">추가</button>
+            </div>
+        </div>
+        }
+        @@if(context.file.alert){
+        <p class="text-danger mt-1">@@file.alert</p>
+        }
+    </td>
+</tr>
+}
+@@if(context.size){
+<tr>
+    <th scope="row">@@size.title</th>
+    <td>
+        <div class="d-flex align-items-center">
+            <span>@@size.type1 :</span>
+            <input type="text" class="form-control w-auto" aria-label="@@size.type1 입력">
+            <span>px</span>
+            <span class="ms-5">@@size.type2 :</span>
+            <input type="text" class="form-control w-auto" aria-label="@@size.type2 입력">
+            <span>px</span>
+        </div>
+    </td>
+</tr>
+}

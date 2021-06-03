@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub01 : true
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title.html', {
+                cate01 : '01',
+                title : '팀매칭 등록/관리',
+                prev : '팀매칭 접수현황'
+            })
+
+            <!-- page contents -->
+            <div class="page-section">
+                <section class="sect">
+                    @@include('./modules/write-table.html', {
+                        sub01 : true,
+                        button : true,
+                        btntype : 'save',
+                        prev : 'sub_01'
+                    })
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+</body>
+</html>

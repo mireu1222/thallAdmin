@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub04 : true,
+            cate04 : '04'
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title.html', {
+                cate04 : '04',
+                title : '접속 통계',
+            })
+
+            <!-- page contents -->
+            <div class="page-section">
+                <section class="sect">
+                    @@include('./modules/list-search.html', {
+                        periodEdit : '기간',
+                    })
+                </section>
+
+                <section class="sect">
+                    <div id="chart"></div>
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+
+    <script>
+        var chart = c3.generate({
+            bindto: '#chart',
+            data: {
+                x: 'x',
+                columns: [
+                    ['x', '2021-07-01', '2021-07-02', '2021-07-03', '2021-07-04', '2021-07-05', '2021-07-06', '2021-07-07', '2021-07-08', '2021-07-09'],
+                    ['접속 통계', 30, 200, 100, 400, 150, 250, 300, 200, 100]
+                ]
+            },
+            color: {
+                pattern: ['#ee3d43']
+            },
+            axis : {
+                x : {
+                    type : 'timeseries',
+                    tick : {
+                        format : '%Y%m%d',
+                        // culling: {
+                        //     max : 5
+                        // },
+                        rotate : '-50'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

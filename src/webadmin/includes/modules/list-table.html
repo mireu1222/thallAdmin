@@ -1,0 +1,1162 @@
+<!-- table -->
+<div class="table-responsive">
+    <table class="table table-bordered table-hover text-center col-table"@@if(context.chktype){ data-toggle="allChk"}>
+        <thead class="table-light">
+            @@if(context.sub01){
+                <tr>
+                    @@if(context.sub01 === 'modal'){
+                        <th scope="col"><input type="checkbox" id="m-chk-all" class="form-check-input chk-all" name="m-chk-list" aria-label="전체 선택"></th>
+                    }
+                    <th scope="col">번호</th>
+                    <th scope="col">아이디</th>
+                    <th scope="col">회원명</th>
+                    <th scope="col">라운드 날짜</th>
+                    <th scope="col">라운드 시간</th>
+                    <th scope="col">라운드 인원</th>
+                    <th scope="col">라운드 지역</th>
+                    <th scope="col">라운드 골프장</th>
+                    <th scope="col">요청 인원</th>
+                    <th scope="col">등록일</th>
+                    @@if(context.sub01 !== 'modal'){
+                        <th scope="col">관리</th>
+                    }
+                </tr>
+            }
+            @@if(context.sub01req){
+                <tr>
+                    <th scope="col"><input type="checkbox" id="chk-all" class="form-check-input chk-all" name="chk-list" aria-label="전체 선택"></th>
+                    <th scope="col">번호</th>
+                    <th scope="col">아이디</th>
+                    <th scope="col">회원명</th>
+                    <th scope="col">라운드 날짜</th>
+                    <th scope="col">라운드 시간</th>
+                    <th scope="col">라운드 지역</th>
+                    <th scope="col">라운드 골프장</th>
+                    <th scope="col">요청일</th>
+                    <th scope="col">상태</th>
+                </tr>
+            }
+            @@if(context.sub02){
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">아이디</th>
+                    <th scope="col">회원명</th>
+                    <th scope="col">라운드 날짜</th>
+                    <th scope="col">라운드 시간</th>
+                    <th scope="col">라운드 인원</th>
+                    <th scope="col">라운드 지역</th>
+                    <th scope="col">라운드 골프장</th>
+                    <th scope="col">매칭회원</th>
+                    <th scope="col">매칭일</th>
+                    <th scope="col">관리</th>
+                </tr>
+            }
+            @@if(context.sub0202){
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">아이디</th>
+                    <th scope="col">회원명</th>
+                    <th scope="col">라운드 날짜</th>
+                    <th scope="col">라운드 시간</th>
+                    <th scope="col">라운드 인원</th>
+                    <th scope="col">라운드 지역</th>
+                    <th scope="col">라운드 골프장</th>
+                    <th scope="col">매칭회원</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">내역</th>
+                </tr>
+            }
+            @@if(context.sub0301){
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">아이디</th>
+                    <th scope="col">회원명</th>
+                    <th scope="col">이메일</th>
+                    <th scope="col">휴대폰 번호</th>
+                    <th scope="col">최근접속일</th>
+                    <th scope="col">등록일</th>
+                    <th scope="col">팀매칭 이용</th>
+                    <th scope="col">메시지</th>
+                </tr>
+            }
+            @@if(context.sub0302){
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">탈퇴일</th>
+                    <th scope="col">아이디</th>
+                    <th scope="col">탈퇴사유</th>
+                    <th scope="col">고객의견</th>
+                </tr>
+            }
+            @@if(context.sub040101){
+                <tr>
+                    <th scope="col" rowspan="2">번호</th>
+                    <th scope="col" rowspan="2">날짜</th>
+                    <th scope="col" rowspan="2">기회원</th>
+                    <th scope="col" rowspan="2">신규회원</th>
+                    <th scope="colgroup" colspan="3">성별 구성</th>
+                    <th scope="colgroup" colspan="7">연령 구성</th>
+                </tr>
+                <tr>
+                    <th scope="col">남</th>
+                    <th scope="col">여</th>
+                    <th scope="col">합계</th>
+                    <th scope="col">20대</th>
+                    <th scope="col">30대</th>
+                    <th scope="col">40대</th>
+                    <th scope="col">50대</th>
+                    <th scope="col">60대</th>
+                    <th scope="col">70대 이상</th>
+                    <th scope="col">합계</th>
+                </tr>
+            }
+            @@if(context.sub040102){
+                <tr>
+                    <th scope="col" colspan="2">구분</th>
+                    <th scope="col">1월</th>
+                    <th scope="col">2월</th>
+                    <th scope="col">3월</th>
+                    <th scope="col">4월</th>
+                    <th scope="col">5월</th>
+                    <th scope="col">6월</th>
+                    <th scope="col">7월</th>
+                    <th scope="col">8월</th>
+                    <th scope="col">9월</th>
+                    <th scope="col">10월</th>
+                    <th scope="col">11월</th>
+                    <th scope="col">12월</th>
+                </tr>
+            }
+            @@if(context.sub040201){
+                <tr>
+                    <th scope="colgroup" colspan="5">라운드 인원</th>
+                    <th scope="colgroup" colspan="6">라운드 시간</th>
+                    <th scope="col" rowspan="2" class="ex">합계</th>
+                </tr>
+                <tr>
+                    <th scope="col">1인</th>
+                    <th scope="col">2인</th>
+                    <th scope="col">3인</th>
+                    <th scope="col">커플</th>
+                    <th scope="col">합계</th>
+                    <th scope="col">새벽</th>
+                    <th scope="col">오전</th>
+                    <th scope="col">오후A</th>
+                    <th scope="col">오후B</th>
+                    <th scope="col">야간</th>
+                    <th scope="col">시간무관</th>
+                </tr>
+            }
+            @@if(context.sub04020102){
+                <tr>
+                    <th scope="col" rowspan="2">번호</th>
+                    <th scope="col" rowspan="2">날짜</th>
+                    <th scope="colgroup" colspan="5">라운드 인원</th>
+                    <th scope="colgroup" colspan="6">라운드 시간</th>
+                    <th scope="col" rowspan="2" class="ex">합계</th>
+                </tr>
+                <tr>
+                    <th scope="col">1인</th>
+                    <th scope="col">2인</th>
+                    <th scope="col">3인</th>
+                    <th scope="col">커플</th>
+                    <th scope="col">합계</th>
+                    <th scope="col">새벽</th>
+                    <th scope="col">오전</th>
+                    <th scope="col">오후A</th>
+                    <th scope="col">오후B</th>
+                    <th scope="col">야간</th>
+                    <th scope="col">시간무관</th>
+                </tr>
+            }
+            @@if(context.sub040202){
+                <tr>
+                    <th scope="col" colspan="2">구분</th>
+                    <th scope="col">1월</th>
+                    <th scope="col">2월</th>
+                    <th scope="col">3월</th>
+                    <th scope="col">4월</th>
+                    <th scope="col">5월</th>
+                    <th scope="col">6월</th>
+                    <th scope="col">7월</th>
+                    <th scope="col">8월</th>
+                    <th scope="col">9월</th>
+                    <th scope="col">10월</th>
+                    <th scope="col">11월</th>
+                    <th scope="col">12월</th>
+                </tr>
+            }
+            @@if(context.sub0405){
+                <tr>
+                    <th scope="col">총 티홀 메시지수</th>
+                    <th scope="col">최소 티홀 메시지수</th>
+                    <th scope="col">최대 티홀 메시지수</th>
+                </tr>
+            }
+            @@if(context.sub0504){
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">성명</th>
+                    <th scope="col">아이디</th>
+                    <th scope="col">휴대폰번호</th>
+                    <th scope="col">접수일</th>
+                    <th scope="col">처리상태</th>
+                    <th scope="col">관리</th>
+                </tr>
+            }
+            @@if(context.sub050501){
+                <tr>
+                    <th scope="col"><input type="checkbox" id="chk-all" class="form-check-input chk-all" name="chk-list" aria-label="전체 선택"></th>
+                    <th scope="col">번호</th>
+                    <th scope="col">이벤트 제목</th>
+                    <th scope="col">이벤트 기간</th>
+                    <th scope="col">작성자</th>
+                    <th scope="col">작성일</th>
+                    <th scope="col">진행상태</th>
+                    <th scope="col">조회수</th>
+                    <th scope="col">신청자</th>
+                </tr>
+            }
+            @@if(context.sub050502){
+                <tr>
+                    <th scope="col"><input type="checkbox" id="chk-all" class="form-check-input chk-all" name="chk-list" aria-label="전체 선택"></th>
+                    <th scope="col">번호</th>
+                    <th scope="col">아이디</th>
+                    <th scope="col">성명</th>
+                    <th scope="col">휴대폰번호</th>
+                    <th scope="col">이메일</th>
+                    <th scope="col">신청일</th>
+                    <th scope="col">당첨여부</th>
+                </tr>
+            }
+            @@if(context.sub0506){
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">구분</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">등록일</th>
+                    <th scope="col">조회수</th>
+                    <th scope="col">관리</th>
+                </tr>
+            }
+            @@if(context.sub0507){
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">시작일</th>
+                    <th scope="col">종료일</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">사용여부</th>
+                    <th scope="col">관리</th>
+                </tr>
+            }
+            @@if(context.sub0508){
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">이미지</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">게시기간</th>
+                    <th scope="col">사용여부</th>
+                    <th scope="col">관리</th>
+                </tr>
+            }
+            @@if(context.sub0601){
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">아이디</th>
+                    <th scope="col">성명</th>
+                    <th scope="col">부서</th>
+                    <th scope="col">등록일</th>
+                    <th scope="col">최종로그인</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">유효권한</th>
+                    <th scope="col">관리</th>
+                </tr>
+            }
+        </thead>
+        <tbody>
+            @@if(context.sub01){
+                <tr>
+                    @@if(context.sub01 === 'modal'){
+                        <td><input type="checkbox" id="m-chk-01" class="form-check-input" name="m-chk-list" aria-label="해당 항목 선택"></td>
+                    }
+                    <td>999</td>
+                    <td><a href="" class="link-point">takkon21</a></td>
+                    <td><a href="" class="link-point">민정님</a></td>
+                    <td>2021-07-01</td>
+                    <td>새벽(5시~7시)</td>
+                    <td>1인</td>
+                    <td>제주시</td>
+                    <td>그린필드</td>
+                    <td>7명</td>
+                    <td>2021-06-21 18:00</td>
+                    @@if(context.sub01 !== 'modal'){
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_01_write.html" class="btn btn-sm btn-outline-dark">관리</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                            <a href="sub_01_request.html" class="btn btn-sm btn-outline-success">팀매칭요청</a>
+                        </div>
+                    </td>
+                    }
+                </tr>
+            }
+            @@if(context.sub01req){
+                <tr>
+                    <td><input type="checkbox" id="chk-01" class="form-check-input" name="chk-list" aria-label="해당 항목 선택"></td>
+                    <td>999</td>
+                    <td>gildong2</td>
+                    <td>홍길동(41)</td>
+                    <td>2021-07-01</td>
+                    <td>새벽</td>
+                    <td>제주</td>
+                    <td>그린필드</td>
+                    <td>2021-06-21 18:00</td>
+                    <td><span class="badge bg-dark">팀매칭지원</span></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="chk-02" class="form-check-input" name="chk-list" aria-label="해당 항목 선택"></td>
+                    <td>999</td>
+                    <td>gildong2</td>
+                    <td>홍길동(41)</td>
+                    <td>2021-07-01</td>
+                    <td>새벽</td>
+                    <td>제주</td>
+                    <td>그린필드</td>
+                    <td>2021-06-21 18:00</td>
+                    <td><span class="badge bg-point">팀매칭확정</span></td>
+                </tr>
+            }
+            @@if(context.sub02){
+                <tr>
+                    <td>999</td>
+                    <td><a href="" class="link-point">takkon21</a></td>
+                    <td><a href="" class="link-point">민정님</a></td>
+                    <td>2021-07-01</td>
+                    <td>새벽(5시~7시)</td>
+                    <td>1인</td>
+                    <td>제주시</td>
+                    <td>그린필드</td>
+                    <td>김회원(kimmem)</td>
+                    <td>2021-06-21 18:00</td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_02_01_edit.html" class="btn btn-sm btn-outline-dark">관리</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+            @@if(context.sub0202){
+                <tr>
+                    <td>999</td>
+                    <td><a href="" class="link-point">takkon21</a></td>
+                    <td><a href="" class="link-point">민정님</a></td>
+                    <td>2021-07-01</td>
+                    <td>새벽(5시~7시)</td>
+                    <td>1인</td>
+                    <td>제주시</td>
+                    <td>그린필드</td>
+                    <td>김회원(kimmem)</td>
+                    <td><span class="badge bg-success">완료</span></td>
+                    <td>
+                        <a href="sub_02_02_edit.html" class="link-point">보기</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>999</td>
+                    <td><a href="" class="link-point">takkon21</a></td>
+                    <td><a href="" class="link-point">민정님</a></td>
+                    <td>2021-07-01</td>
+                    <td>새벽(5시~7시)</td>
+                    <td>1인</td>
+                    <td>제주시</td>
+                    <td>그린필드</td>
+                    <td>김회원(kimmem)</td>
+                    <td><span class="badge bg-secondary">취소</span></td>
+                    <td>
+                        <a href="sub_02_02_edit.html" class="link-point">보기</a>
+                    </td>
+                </tr>
+            }
+            @@if(context.sub0301){
+                <tr>
+                    <td>999</td>
+                    <td>takkon21</td>
+                    <td>민정님</td>
+                    <td>takkon@naver.com</td>
+                    <td>010-1234-1234</td>
+                    <td>2021-06-21 09:00</td>
+                    <td>2021-06-21</td>
+                    <td>
+                        <a href="sub_03_01_edit.html" class="link-point">보기</a>
+                    </td>
+                    <td>
+                        <a href="" class="link-point">보기</a>
+                    </td>
+                </tr>
+            }
+            @@if(context.sub0302){
+                <tr>
+                    <td>999</td>
+                    <td>2021-07-12 21:38</td>
+                    <td>hong1234</td>
+                    <td>
+                        <ul class="list-group text-start d-inline-flex">
+                            <li class="list-group-item">
+                                <input type="checkbox" class="form-check-input me-1" disabled>
+                                고객서비스(문의 대응, 상담, 상품 구매 등) 불만
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" class="form-check-input me-1" disabled>
+                                개인정보유출 우려
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" class="form-check-input me-1" checked disabled>
+                                팀매칭 서비스 불만
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" class="form-check-input me-1" disabled>
+                                사이트 기능 불만
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" class="form-check-input me-1" checked disabled>
+                                방문 빈도가 낮음
+                            </li>
+                        </ul>
+                    </td>
+                    <td>고객 의견이 노출됨</td>
+                </tr>
+            }
+            @@if(context.sub040101){
+                <tr>
+                    <td>999</td>
+                    <td>2021-07-15</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td class="table-active">000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td class="table-active">0000000</td>
+                </tr>
+            }
+            @@if(context.sub040102){
+                <tr>
+                    <th scope="row" colspan="2">기회원</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="2">신규회원</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row" rowspan="3">성별구성</th>
+                    <th scope="row">남</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">여</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr class="table-active">
+                    <th scope="row">합계</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row" rowspan="7">연령구성</th>
+                    <th scope="row">20대</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">30대</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">40대</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">50대</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">60대</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">70대 이상</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr class="table-active">
+                    <th scope="row">합계</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+            }
+            @@if(context.sub040201){
+                <tr>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td class="table-active">000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td class="table-active">000</td>
+                </tr>
+            }
+            @@if(context.sub04020102){
+                <tr>
+                    <td>999</td>
+                    <td>2021-07-15</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td class="table-active">000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td class="table-active">000</td>
+                </tr>
+            }
+            @@if(context.sub040202){
+                <tr>
+                    <th scope="row" rowspan="5">라운드 인원</th>
+                    <th scope="row">1인</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">2인</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">3인</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">커플</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr class="table-active">
+                    <th scope="row">합계</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row" rowspan="7">라운드 시간</th>
+                    <th scope="row">새벽</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">오전</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">오후A</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">오후B</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">야간</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr>
+                    <th scope="row">시간무관</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+                <tr class="table-active">
+                    <th scope="row">합계</th>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                    <td>000</td>
+                </tr>
+            }
+            @@if(context.sub0405){
+                <tr>
+                    <td>
+                        <p class="fs-5"><strong class="text-point">000,000</strong> 건</p>
+                    </td>
+                    <td>
+                        <p class="fs-5"><strong class="text-point">000,000</strong> 건</p>
+                        <p>2021-07-01</p>
+                    </td>
+                    <td>
+                        <p class="fs-5"><strong class="text-point">000,000</strong> 건</p>
+                        <p>2021-07-01</p>
+                    </td>
+                </tr>
+            }
+            @@if(context.sub0504){
+                <tr>
+                    <td>999</td>
+                    <td>제목이 들어감</td>
+                    <td>홍길동</td>
+                    <td>hong1234</td>
+                    <td>010-1234-5678</td>
+                    <td>2021-07-13 18:24</td>
+                    <td>
+                        <span class="badge bg-secondary">접수확인</span>
+                    </td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_05_04_edit.html" class="btn btn-sm btn-outline-dark">보기</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>999</td>
+                    <td>제목이 들어감</td>
+                    <td>홍길동</td>
+                    <td>hong1234</td>
+                    <td>010-1234-5678</td>
+                    <td>2021-07-13 18:24</td>
+                    <td>
+                        <span class="badge bg-point">접수중</span>
+                    </td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_05_04_edit.html" class="btn btn-sm btn-outline-dark">보기</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>999</td>
+                    <td>제목이 들어감</td>
+                    <td>홍길동</td>
+                    <td>hong1234</td>
+                    <td>010-1234-5678</td>
+                    <td>2021-07-13 18:24</td>
+                    <td>
+                        <span class="badge bg-success">답변완료</span>
+                    </td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_05_04_edit.html" class="btn btn-sm btn-outline-dark">보기</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+            }
+            @@if(context.sub050501){
+                <tr>
+                    <td><input type="checkbox" id="chk-01" class="form-check-input" name="chk-list" aria-label="해당 항목 선택"></td>
+                    <td>999</td>
+                    <td><a href="" class="link-dark" target="_blank">이벤트 제목이 들어감. 프론트 해당 이벤트페이지로 연결</a></td>
+                    <td>2021-02-02 ~ 2021-02-30</td>
+                    <td>관리자</td>
+                    <td>2021-02-01</td>
+                    <td>
+                        <span class="badge bg-success">진행대기</span>
+                    </td>
+                    <td>999</td>
+                    <td><a href="sub_05_05_02.html" class="link-dark">보기</a></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="chk-02" class="form-check-input" name="chk-list" aria-label="해당 항목 선택"></td>
+                    <td>999</td>
+                    <td><a href="" class="link-dark" target="_blank">이벤트 제목이 들어감. 프론트 해당 이벤트페이지로 연결</a></td>
+                    <td>2021-02-02 ~ 2021-02-30</td>
+                    <td>관리자</td>
+                    <td>2021-02-01</td>
+                    <td>
+                        <span class="badge bg-point">진행중</span>
+                    </td>
+                    <td>999</td>
+                    <td><a href="sub_05_05_02.html" class="link-dark">보기</a></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="chk-03" class="form-check-input" name="chk-list" aria-label="해당 항목 선택"></td>
+                    <td>999</td>
+                    <td><a href="" class="link-dark" target="_blank">이벤트 제목이 들어감. 프론트 해당 이벤트페이지로 연결</a></td>
+                    <td>2021-02-02 ~ 2021-02-30</td>
+                    <td>관리자</td>
+                    <td>2021-02-01</td>
+                    <td>
+                        <span class="badge bg-secondary">마감</span>
+                    </td>
+                    <td>999</td>
+                    <td><a href="sub_05_05_02.html" class="link-dark">보기</a></td>
+                </tr>
+            }
+            @@if(context.sub050502){
+                <tr>
+                    <td><input type="checkbox" id="chk-01" class="form-check-input" name="chk-list" aria-label="해당 항목 선택"></td>
+                    <td>999</td>
+                    <td>hone1234</td>
+                    <td>홍길동</td>
+                    <td>010-1234-1234</td>
+                    <td>hong1234@naver.com</td>
+                    <td>2021-02-01</td>
+                    <td>
+                        <span class="badge bg-point">당첨</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="chk-02" class="form-check-input" name="chk-list" aria-label="해당 항목 선택"></td>
+                    <td>999</td>
+                    <td>hone1234</td>
+                    <td>홍길동</td>
+                    <td>010-1234-1234</td>
+                    <td>hong1234@naver.com</td>
+                    <td>2021-02-01</td>
+                    <td></td>
+                </tr>
+            }
+            @@if(context.sub0506){
+                <tr>
+                    <td>999</td>
+                    <td>이미지 자료</td>
+                    <td>게시글 제목이 들어감</td>
+                    <td>2021-04-28</td>
+                    <td>999</td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_05_06_write.html" class="btn btn-sm btn-outline-dark">수정</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>999</td>
+                    <td>동영상 자료</td>
+                    <td>게시글 제목이 들어감</td>
+                    <td>2021-04-28</td>
+                    <td>999</td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_05_06_write.html" class="btn btn-sm btn-outline-dark">수정</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>999</td>
+                    <td>텍스트 자료</td>
+                    <td>게시글 제목이 들어감</td>
+                    <td>2021-04-28</td>
+                    <td>999</td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_05_06_write.html" class="btn btn-sm btn-outline-dark">수정</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+            }
+            @@if(context.sub0507){
+                <tr>
+                    <td>999</td>
+                    <td>팝업 제목이 들어감</td>
+                    <td>2021-06-01</td>
+                    <td>2021-06-20</td>
+                    <td>
+                        <span class="badge bg-point">진행중</span>
+                    </td>
+                    <td>
+                        <span class="badge bg-success">사용</span>
+                    </td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_05_07_write.html" class="btn btn-sm btn-outline-dark">수정</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>999</td>
+                    <td>팝업 제목이 들어감</td>
+                    <td>2021-06-01</td>
+                    <td>2021-06-20</td>
+                    <td>
+                        <span class="badge bg-success">대기중</span>
+                    </td>
+                    <td>
+                        <span class="badge bg-secondary">미사용</span>
+                    </td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_05_07_write.html" class="btn btn-sm btn-outline-dark">수정</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>999</td>
+                    <td>팝업 제목이 들어감</td>
+                    <td>2021-06-01</td>
+                    <td>2021-06-20</td>
+                    <td>
+                        <span class="badge bg-secondary">종료</span>
+                    </td>
+                    <td>
+                        <span class="badge bg-secondary">미사용</span>
+                    </td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_05_07_write.html" class="btn btn-sm btn-outline-dark">수정</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+            }
+            @@if(context.sub0508){
+                <tr>
+                    <td>10</td>
+                    <td>
+                        <div class="img-preview">
+                            <img src="/webadmin/images/@thumb3.jpg" alt="">
+                        </div>
+                    </td>
+                    <td>배너 제목이 들어감</td>
+                    <td>2021-06-01 ~ 2021-06-20</td>
+                    <td>
+                        <span class="badge bg-secondary">미사용</span>
+                    </td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_05_08_write.html" class="btn btn-sm btn-outline-dark">수정</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>
+                        <div class="img-preview">
+                            <img src="/webadmin/images/@thumb3.jpg" alt="">
+                        </div>
+                    </td>
+                    <td>배너 제목이 들어감</td>
+                    <td>즉시</td>
+                    <td>
+                        <span class="badge bg-success">사용</span>
+                    </td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_05_08_write.html" class="btn btn-sm btn-outline-dark">수정</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+            }
+            @@if(context.sub0601){
+                <tr>
+                    <td>999</td>
+                    <td>abcd</td>
+                    <td>홍길동</td>
+                    <td>관리팀</td>
+                    <td>2021-06-01</td>
+                    <td>2021-07-01 10:00</td>
+                    <td>
+                        <span class="badge bg-success">정상</span>
+                    </td>
+                    <td><strong class="text-point">11</strong>가지 메뉴</td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_06_01_write.html" class="btn btn-sm btn-outline-dark">수정</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>999</td>
+                    <td>abcd</td>
+                    <td>홍길동</td>
+                    <td>관리팀</td>
+                    <td>2021-06-01</td>
+                    <td>2021-07-01 10:00</td>
+                    <td>
+                        <span class="badge bg-danger">정지</span>
+                    </td>
+                    <td><strong class="text-point">11</strong>가지 메뉴</td>
+                    <td>
+                        <div class="d-inline-flex align-items-center buttons">
+                            <a href="sub_06_01_write.html" class="btn btn-sm btn-outline-dark">수정</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger">삭제</button>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<!-- // table -->

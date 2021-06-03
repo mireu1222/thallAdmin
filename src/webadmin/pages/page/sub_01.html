@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub01 : true,
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title.html', {
+                cate01 : true,
+                title : '팀매칭 접수현황',
+            })
+
+            <!-- page contents -->
+            <div class="page-section">
+                <section class="sect">
+                    @@include('./modules/list-search.html', {
+                        period : true,
+                        basic : true
+                    })
+                </section>
+
+                <section class="sect">
+                    @@include('./modules/filter.html', {
+                        excel : true,
+                        write : {
+                            name : '팀매칭 등록',
+                            page : 'sub_01_write'
+                        }
+                    })
+    
+                    @@include('./modules/list-table.html', {
+                        sub01 : true
+                    })
+    
+                    @@include('./modules/pagination.html')
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+</body>
+</html>

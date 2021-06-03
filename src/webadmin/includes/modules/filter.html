@@ -1,0 +1,36 @@
+<!-- filter -->
+<div class="filter-wrap d-flex align-items-center mb-2">
+    @@if(!context.noTotal){
+    <p class="total me-3">TOTAL : <strong class="text-point">99</strong></p>
+    <select class="form-select form-select-sm w-auto" aria-label="노출되는 리스트 갯수 선택">
+        <option value="">10개 보기</option>
+        <option value="">20개 보기</option>
+        <option value="">30개 보기</option>
+        <option value="">40개 보기</option>
+        <option value="">50개 보기</option>
+        <option value="">100개 보기</option>
+    </select>
+    }
+    <div class="buttons d-flex ms-auto">
+        @@if(context.state){
+        <div class="input-group input-group-sm w-auto">
+            <p class="input-group-text">선택한 회원의 상태를</p>
+            <select class="form-select form-select-sm" aria-label="회원상태 변경 선택">
+                <option value="">팀매칭지원</option>
+                <option value="">팀매칭확정</option>
+            </select>
+            <button type="button" class="btn btn-sm btn-secondary">변경</button>
+        </div>
+        }
+        @@if(context.excel){
+        <button type="button" class="btn btn-sm btn-secondary"><i class="bi bi-download me-1"></i>엑셀다운로드</button>
+        }
+        @@if(context.write){
+        <a href="@@write.page.html" class="btn btn-sm btn-secondary"><i class="bi bi-pencil-square me-1"></i>@@write.name</a>
+        }
+        @@if(context.modal){
+        <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#@@modal.target">@@modal.name</button>
+        }
+    </div>
+</div>
+<!-- // filter -->

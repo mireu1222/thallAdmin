@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub01 : true
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title.html', {
+                cate01 : '01',
+                title : '팀매칭 요청내역',
+                prev : '팀매칭 접수현황'
+            })
+
+            <!-- page contents -->
+            <div class="page-section">
+                <section class="sect">
+                    @@include('./modules/request-cont.html')
+                </section>
+
+                <section class="sect">
+                    @@include('./modules/filter.html', {
+                        excel : true,
+                        state : true,
+                        modal : {
+                            name : '팀매칭 추가',
+                            target : 'add-modal'
+                        }
+                    })
+    
+                    @@include('./modules/list-table.html', {
+                        sub01req : true,
+                        chktype : true
+                    })
+    
+                    @@include('./modules/pagination.html')
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+
+    <!-- modal -->
+    @@include('./modules/modal.html', {
+        id : 'add',
+        size : 'full',
+        title : '팀매칭 접수 내역',
+        btn : '저장',
+        sub01req : true
+    })
+    <!-- // modal -->
+</body>
+</html>

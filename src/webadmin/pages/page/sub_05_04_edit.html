@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub05 : true,
+            cate05 : '04'
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title.html', {
+                cate05 : '04',
+                title : '1:1문의관리',
+            })
+
+            <!-- page contents -->
+            <div class="page-section">                
+                <section class="sect">
+                    <h3 class="h3-title"><i class="bi bi-pin-angle me-1"></i>문의내용</h3>
+                    @@include('./modules/board-view.html', {
+                        qna : true
+                    })
+                </section>
+                <section class="sect">
+                    @@include('./modules/write-table.html', {
+                        title : '답변작성',
+                        col4 : true,
+                        sub0504 : true,
+                        button : true,
+                        btntype : 'save3',
+                        prev : 'sub_05_04'
+                    })
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+</body>
+</html>

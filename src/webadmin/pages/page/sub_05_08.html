@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub05 : true,
+            cate05 : '08'
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title.html', {
+                cate05 : '08',
+                title : '배너관리',
+            })
+
+            <!-- page contents -->
+            <div class="page-section">                
+                <section class="sect">
+                    @@include('./modules/search.html', {
+                        page : 'sub_05_08_write',
+                    })
+
+                    @@include('./modules/list-table.html', {
+                        sub0508 : true,
+                    })
+
+                    @@include('./modules/pagination.html')
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+</body>
+</html>

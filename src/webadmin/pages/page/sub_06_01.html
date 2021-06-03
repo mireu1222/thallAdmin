@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub06 : true,
+            cate06 : '01'
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title.html', {
+                cate06 : '01',
+                title : '내부사용자',
+            })
+
+            <!-- page contents -->
+            <div class="page-section">                
+                <section class="sect">
+                    @@include('./modules/filter.html', {
+                        write : {
+                            page : 'sub_06_01_write',
+                            name : '등록'
+                        }
+                    })
+
+                    @@include('./modules/list-table.html', {
+                        sub0601 : true,
+                    })
+
+                    @@include('./modules/pagination.html')
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <!-- body -->
+    <div id="wrap">
+        @@include('./layout/header.html', {
+            sub05 : true,
+            cate05 : '06'
+        })
+
+        <!-- container -->
+        <div id="contents" class="contents">
+            @@include('./layout/page-title.html', {
+                cate05 : '06',
+                prev : '홍보자료관리',
+                title : '홍보자료 등록/수정'
+            })
+
+            <!-- page contents -->
+            <div class="page-section">                
+                <section class="sect">
+                    @@include('./modules/write-table.html', {
+                        sub0506 : true,
+                        button : true,
+                        btntype : 'save',
+                        prev : 'sub_05_06'
+                    })
+                </section>
+            </div>
+            <!-- // page contents -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // body -->
+</body>
+</html>
